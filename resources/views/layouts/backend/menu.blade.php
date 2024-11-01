@@ -70,6 +70,11 @@
                 </ul>
             </li>
             <li class=" nav-item">
+                <a class="d-flex align-items-center" href="#"><i data-feather="database"></i>
+                    <span class="menu-title text-truncate" data-i18n="Data Sekolah">Manajemen Pendaftaran</span>
+                </a>
+            </li>
+            <li class=" nav-item">
                 <a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i>
                     <span class="menu-title text-truncate" data-i18n="Card">Berita</span>
                 </a>
