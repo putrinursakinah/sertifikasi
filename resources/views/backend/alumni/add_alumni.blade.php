@@ -21,8 +21,12 @@
                             <input type="text" class="form-control" name="nama_lengkap" required>
                         </div>
                         <div class="col">
-                            <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                            <input type="text" class="form-control" name="jenis_kelamin" required>
+                        <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
+                            <select class="form-control" name="jenis_kelamin" required>
+                                <option value="">Pilih Jenis Kelamin</option>
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
                         </div>
                     </div>
                 </div>
