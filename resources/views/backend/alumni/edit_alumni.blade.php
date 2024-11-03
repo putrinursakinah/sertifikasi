@@ -30,7 +30,12 @@
                         </div>
                         <div class="col">
                             <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                            <input type="text" class="form-control" name="jenis_kelamin" value="{{$alumni->jenis_kelamin}}" required>
+                            <select class="form-control" name="jenis_kelamin" required>
+                                <option value="">{{ $alumni->jenis_kelamin }}</option>
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                            {{-- <input type="text" class="form-control" name="jenis_kelamin" value="{{$alumni->jenis_kelamin}}" required> --}}
                         </div>
                     </div>
                 </div>
