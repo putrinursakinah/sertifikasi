@@ -86,6 +86,9 @@ class AlumniController extends Controller
         $data = Alumni::find($id);
         if (!$data) {
             return redirect()->back()->with('error', 'Data Alumni tidak ditemukan.');
+          if ($request->foto_profile) {
+                $image = $request->file('foto');
+                $nama_img = time()."_".$image->getClientOriginalName();
         }
         $data->nama_lengkap = $request->nama_lengkap;
         $data->jenis_kelamin = $request->jenis_kelamin;
@@ -102,6 +105,7 @@ class AlumniController extends Controller
         return redirect()->route('alumni.view')->with('messege', 'Data Berhasil Diupdate');
 
     }
+}
 
     /**
      * Remove the specified resource from storage.

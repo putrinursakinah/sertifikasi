@@ -99,5 +99,5 @@
         multiple:true,
 });
 </script>
-    
+
 @endpush
