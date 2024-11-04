@@ -70,7 +70,7 @@
                 </ul>
             </li>
             <li class=" nav-item">
-                <a class="d-flex align-items-center" href="#"><i data-feather="database"></i>
+                <a class="d-flex align-items-center" href="#"><i data-feather="folder-plus"></i>
                     <span class="menu-title text-truncate" data-i18n="Data Sekolah">Manajemen Pendaftaran</span>
                 </a>
             </li>
