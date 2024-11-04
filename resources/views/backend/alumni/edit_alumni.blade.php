@@ -104,5 +104,5 @@
         multiple:true,
 });
 </script>
-    
+
 @endpush

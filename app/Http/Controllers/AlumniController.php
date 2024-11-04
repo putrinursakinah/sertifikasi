@@ -18,7 +18,7 @@ class AlumniController extends Controller
         // return view('backend.alumni.view_alumni', [
         //     'alumni'
         // ]);
-        
+
         if (Auth::user()->id == '1') {
             $data = Alumni::all();
             return view('backend.alumni.view_alumni', ['data' => $data]);
@@ -43,7 +43,6 @@ class AlumniController extends Controller
      */
     public function store(Request $request)
     {
-        
         $data = new Alumni();
         $data->nama_lengkap = $request->nama_lengkap;
         $data->jenis_kelamin = $request->jenis_kelamin;
@@ -59,7 +58,6 @@ class AlumniController extends Controller
 
         return redirect()->route('alumni.view')->with('message', 'Data Berhasil Ditambahkan');
     }
-
     /**
      * Display the specified resource.
      */
@@ -88,6 +86,9 @@ class AlumniController extends Controller
         $data = Alumni::find($id);
         if (!$data) {
             return redirect()->back()->with('error', 'Data Alumni tidak ditemukan.');
+          if ($request->foto_profile) {
+                $image = $request->file('foto');
+                $nama_img = time()."_".$image->getClientOriginalName();
         }
         $data->nama_lengkap = $request->nama_lengkap;
         $data->jenis_kelamin = $request->jenis_kelamin;
@@ -104,6 +105,7 @@ class AlumniController extends Controller
         return redirect()->route('alumni.view')->with('messege', 'Data Berhasil Diupdate');
 
     }
+}
 
     /**
      * Remove the specified resource from storage.
