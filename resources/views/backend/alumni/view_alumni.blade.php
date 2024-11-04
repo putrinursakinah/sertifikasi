@@ -54,7 +54,7 @@
                                 <td>{{ $alumni->email }}</td>
                                 <td>{{ $alumni->telepon }}</td>
                                 <td>{{ $alumni->handphone }}</td>
-                                <td>{{ $alumni->foto }}</td>
+                                <td><img src="{{asset('uploads/'.$alumni->foto)}}" width="50"></td>
                                 <td>
                                     <a href="{{ route('alumni.edit', $alumni->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"> Edit</i></a>
                                     <a href="{{ route('alumni.delete', $alumni->id) }}" class="btn btn-danger btn-sm"><i class="fas fa-trash"> Delete</i></a>

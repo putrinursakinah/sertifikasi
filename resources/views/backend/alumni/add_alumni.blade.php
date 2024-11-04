@@ -12,7 +12,7 @@
     <br>
     <div class="card shadow mb-4">
         <div class="card-body">
-            <form action="{{ route('alumni.store') }}" method="POST">
+            <form action="{{ route('alumni.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <div class="row">
@@ -48,7 +48,7 @@
                     <div class="row">
                         <div class="col">
                             <label for="nis" class="form-label">NIS</label>
-                            <input type="text" class="form-control" name="nis" required>
+                            <input type="number" class="form-control" name="nis" required>
                         </div>
                         <div class="col">
                             <label for="alamat" class="form-label">Alamat</label>
@@ -65,7 +65,7 @@
                         </div>
                         <div class="col">
                             <label for="telepon" class="form-label">Telepon</label>
-                            <input type="text" class="form-control" name="telepon" required>
+                            <input type="number" class="form-control" name="telepon" required>
                         </div>
                     </div>
                 </div>
@@ -74,11 +74,11 @@
                     <div class="row">
                         <div class="col">
                             <label for="handphone" class="form-label">Handphone</label>
-                            <input type="text" class="form-control" name="handphone" required>
+                            <input type="number" class="form-control" name="handphone" required>
                         </div>
                         <div class="col">
                             <label for="foto" class="form-label">Foto</label>
-                            <input type="text" class="form-control" name="foto" required>
+                            <input type="file" class="form-control" name="foto" required accept="image/*">
                         </div>
                     </div>
                 </div>
