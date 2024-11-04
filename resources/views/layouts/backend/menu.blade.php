@@ -94,9 +94,8 @@
                     </ul>
                 </li>
                 <li class="{{'alumnis/view' == request()->path() ? 'nav-item active' : 'nav-item'}}">
-                    <a class="nav-link collapsed" href="{{ url('alumnis/view') }}"><i data-feather="database"></i>
-                        <span class="menu-title text-truncate" data-i18n="Data Sekolah">Manajemen
-                            Pendaftaran</span>
+                    <a class="nav-link collapsed" href="{{ url('alumnis/view') }}"><i data-feather="folder-plus"></i>
+                        <span class="menu-title text-truncate" data-i18n="Data Sekolah">Manajemen Pendaftaran</span>
                     </a>
                 </li>
                 <li class=" nav-item">
