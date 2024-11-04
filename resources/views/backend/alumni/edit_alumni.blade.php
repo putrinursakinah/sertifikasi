@@ -83,7 +83,7 @@
                         </div>
                         <div class="col">
                             <label for="foto" class="form-label">Foto</label>
-                            <input type="text" class="form-control" name="foto" value="{{$alumni->foto}}" required>
+                            <input type="file" class="form-control" name="foto" value="{{$alumni->foto}}" required>
                         </div>
                     </div>
                 </div>
