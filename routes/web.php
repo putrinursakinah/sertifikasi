@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\Backend\SettingController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -44,6 +45,16 @@ Auth::routes(['register' => false]);
 // ======= BACKEND ======= \\
 Route::middleware('auth')->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    //ALUMNI
+    Route::prefix('alumnis')->group(function(){
+        Route::get('/view',[App\Http\Controllers\AlumniController::class,'index'])->name('alumni.view');
+        Route::get('/add', [App\Http\Controllers\AlumniController::class, 'create'])->name('alumni.add');
+        Route::post('/store', [App\Http\Controllers\AlumniController::class, 'store'])->name('alumni.store');
+        Route::get('/edit/{id}', [App\Http\Controllers\AlumniController::class, 'edit'])->name('alumni.edit');
+        Route::post('/update/{id}', [App\Http\Controllers\AlumniController::class, 'update'])->name('alumni.update');
+        Route::get('/delete/{id}', [App\Http\Controllers\AlumniController::class, 'destroy'])->name('alumni.delete');
+});
 
      /// PROFILE \\\
     Route::resource('profile-settings',Backend\ProfileController::class);
@@ -105,3 +116,13 @@ Route::middleware('auth')->group(function () {
         ]);
     });
 });
+
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified',
+// ])->group(function () {
+//     Route::prefix('alumnis')->group(function(){
+//         Route::get('/view', [AlumniController::class, 'index'])->name('alumni.view');
+//     });
+// });
