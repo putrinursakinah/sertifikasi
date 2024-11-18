@@ -122,7 +122,7 @@
                                         </div>
                                     </div>
 
-                                    <!-- Tambahan Captcha -->
+                                    <!-- 1Captcha -->
                                     <div class="form-group">
                                         <label for="captcha">Captcha</label>
                                         <div>

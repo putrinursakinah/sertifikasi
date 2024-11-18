@@ -68,6 +68,15 @@
                                 <span class="menu-item text-truncate" data-i18n="Basic">Program Studi</span>
                             </a>
                         </li>
+
+                        <li class="nav-item {{ request()->is('kerjasama/view') ? 'active' : '' }}">
+                            <a class="d-flex align-items-center" href="{{ route('kerjasama.view') }}">
+                                <i data-feather="circle"></i>
+                                <span class="menu-item text-truncate" data-i18n="Basic">Kerjasama</span>
+                            </a>
+                        </li>
+
+
                         <li class="nav-item {{ request()->is('backend-kegiatan') ? 'active' : '' }}">
                             <a class="d-flex align-items-center" href=" {{ route('backend-kegiatan.index') }} "><i
                                     data-feather="circle"></i>
@@ -93,8 +102,9 @@
                         </li>
                     </ul>
                 </li>
-                <li class="{{'alumnis/view' == request()->path() ? 'nav-item active' : 'nav-item'}}">
-                    <a class="nav-link collapsed" href="{{ url('alumnis/view') }}"><i data-feather="folder-plus"></i>
+                <li class="{{ 'alumnis/view' == request()->path() ? 'nav-item active' : 'nav-item' }}">
+                    <a class="nav-link collapsed" href="{{ url('alumnis/view') }}"><i
+                            data-feather="folder-plus"></i>
                         <span class="menu-title text-truncate" data-i18n="Data Sekolah">Manajemen Pendaftaran</span>
                     </a>
                 </li>

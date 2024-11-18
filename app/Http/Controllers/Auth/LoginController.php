@@ -7,7 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session; // Pastikan Session diimpor di sini
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
