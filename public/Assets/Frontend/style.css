@@ -10145,3 +10145,13 @@ ul.course-feature2 li:before {
 .invalid-feedback {
   color: red;
 }
+
+/* kerjasama */
+.gambar_kerjasama {
+  width: 100px;
+  height: 100px;
+}
+
+.wrapper{
+  background-color: transparent;
+}
