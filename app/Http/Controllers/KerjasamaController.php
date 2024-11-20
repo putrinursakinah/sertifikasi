@@ -14,15 +14,16 @@ class KerjasamaController extends Controller
      */
     public function index()
     {
-        if (Auth::user()->id == '1') {
-            $data = Kerjasama::all();
-            return view('backend.kerjasama.view_kerjasama', ['data' => $data]);
-        } else {
-            $user = Auth::user()->id;
-            $data = Kerjasama::all();
-            return view('backend.kerjasama.view_kerjasama2', ['data' => $data]);
-        }
+        $data = Kerjasama::all();
+        return view('backend.kerjasama.view_kerjasama', compact('data'));
     }
+
+    // public function index()
+    // {
+    //     $data = Kerjasama::all();
+    //     return view('backend.kerjasama.view_kerjasama', compact('data'));
+    // }
+
 
     /**
      * Show the form for creating a new resource.
