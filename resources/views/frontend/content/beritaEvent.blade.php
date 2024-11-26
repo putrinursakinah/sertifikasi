@@ -63,8 +63,10 @@
                         <li class="wow bounceInUp wrapper" data-wow-duration="2s" data-wow-delay=".1s">
                             <div class="event-content-holder">
                                 <h3><a href="{{ route('detail.event', $events->slug) }}">{{ $k->nama_mitra }}</a></h3>
-                                <img src="{{ asset('uploads/' . $k->gambar) }}" class="gambar_kerjasama"
-                                    alt="ini gambar">
+                                {{-- <img src="{{ asset('uploads/' . $k->gambar) }}" class="gambar_kerjasama"
+                                    alt="ini gambar"> --}}
+
+                                <img src="{{ asset('storage/' . $k->gambar) }}" width="50" alt="Gambar Kerjasama">
                             </div>
                         </li>
                     @endforeach

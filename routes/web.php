@@ -59,12 +59,28 @@ Route::middleware('auth')->group(function () {
     // KERJASAMA
     Route::prefix('kerjasama')->group(function () {
         Route::get('/view', [App\Http\Controllers\KerjasamaController::class, 'index'])->name('kerjasama.view');
-        Route::get('/add', [App\Http\Controllers\KerjasamaController::class, 'create'])->name('kerjasama.add');
+        Route::get('/add', [App\Http\Controllers\KerjasamaController::class, 'create'])->name('kerjasama.create');
         Route::post('/store', [App\Http\Controllers\KerjasamaController::class, 'store'])->name('kerjasama.store');
         Route::get('/edit/{id}', [App\Http\Controllers\KerjasamaController::class, 'edit'])->name('kerjasama.edit');
         Route::post('/update/{id}', [App\Http\Controllers\KerjasamaController::class, 'update'])->name('kerjasama.update');
-        Route::get('/delete/{id}', [App\Http\Controllers\KerjasamaController::class, 'destroy'])->name('kerjasama.delete');
+        Route::delete('/kerjasama/{id}', [App\Http\Controllers\KerjasamaController::class, 'destroy'])->name('kerjasama.destroy');
     });
+
+
+
+    // Sambutan
+    Route::prefix('sambutan')->group(function () {
+        Route::get('/view', [App\Http\Controllers\SambutanController::class, 'index'])->name('sambutan.view');
+        Route::get('/add', [App\Http\Controllers\SambutanController::class, 'create'])->name('sambutan.add');
+        Route::post('/store', [App\Http\Controllers\SambutanController::class, 'store'])->name('sambutan.store');
+        Route::get('/edit/{id}', [App\Http\Controllers\SambutanController::class, 'edit'])->name('sambutan.edit');
+        Route::post('/update/{id}', [App\Http\Controllers\SambutanController::class, 'update'])->name('sambutan.update'); // Gunakan POST
+        Route::get('/delete/{id}', [App\Http\Controllers\SambutanController::class, 'destroy'])->name('sambutan.delete');
+    });
+
+
+
+
 
 
     /// PROFILE \\\
