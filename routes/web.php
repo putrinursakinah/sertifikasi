@@ -54,7 +54,43 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit/{id}', [App\Http\Controllers\AlumniController::class, 'edit'])->name('alumni.edit');
         Route::post('/update/{id}', [App\Http\Controllers\AlumniController::class, 'update'])->name('alumni.update');
         Route::get('/delete/{id}', [App\Http\Controllers\AlumniController::class, 'destroy'])->name('alumni.delete');
-});
+    });
+
+    //GALERI
+    Route::prefix('galeris')->group(function () {
+        Route::get('/view', [App\Http\Controllers\GaleriController::class, 'index'])->name('galeri.view');
+        Route::get('/add', [App\Http\Controllers\GaleriController::class, 'create'])->name('galeri.add');
+        Route::post('/store', [App\Http\Controllers\GaleriController::class, 'store'])->name('galeri.store');
+        Route::get('/edit/{id}', [App\Http\Controllers\GaleriController::class, 'edit'])->name('galeri.edit');
+        Route::post('/update/{id}', [App\Http\Controllers\GaleriController::class, 'update'])->name('galeri.update');
+        Route::get('/delete/{id}', [App\Http\Controllers\GaleriController::class, 'destroy'])->name('galeri.delete');
+    });
+    // KERJASAMA
+    Route::prefix('kerjasama')->group(function () {
+        Route::get('/view', [App\Http\Controllers\KerjasamaController::class, 'index'])->name('kerjasama.view');
+        Route::get('/add', [App\Http\Controllers\KerjasamaController::class, 'create'])->name('kerjasama.create');
+        Route::post('/store', [App\Http\Controllers\KerjasamaController::class, 'store'])->name('kerjasama.store');
+        Route::get('/edit/{id}', [App\Http\Controllers\KerjasamaController::class, 'edit'])->name('kerjasama.edit');
+        Route::post('/update/{id}', [App\Http\Controllers\KerjasamaController::class, 'update'])->name('kerjasama.update');
+        Route::delete('/kerjasama/{id}', [App\Http\Controllers\KerjasamaController::class, 'destroy'])->name('kerjasama.destroy');
+    });
+
+
+
+    // Sambutan
+    Route::prefix('sambutan')->group(function () {
+        Route::get('/view', [App\Http\Controllers\SambutanController::class, 'index'])->name('sambutan.view');
+        Route::get('/add', [App\Http\Controllers\SambutanController::class, 'create'])->name('sambutan.add');
+        Route::post('/store', [App\Http\Controllers\SambutanController::class, 'store'])->name('sambutan.store');
+        Route::get('/edit/{id}', [App\Http\Controllers\SambutanController::class, 'edit'])->name('sambutan.edit');
+        Route::post('/update/{id}', [App\Http\Controllers\SambutanController::class, 'update'])->name('sambutan.update'); // Gunakan POST
+        Route::get('/delete/{id}', [App\Http\Controllers\SambutanController::class, 'destroy'])->name('sambutan.delete');
+    });
+
+
+
+
+
 
     /// PROFILE \\\
     Route::resource('profile-settings', Backend\ProfileController::class);
