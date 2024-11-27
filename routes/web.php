@@ -54,6 +54,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit/{id}', [App\Http\Controllers\AlumniController::class, 'edit'])->name('alumni.edit');
         Route::post('/update/{id}', [App\Http\Controllers\AlumniController::class, 'update'])->name('alumni.update');
         Route::get('/delete/{id}', [App\Http\Controllers\AlumniController::class, 'destroy'])->name('alumni.delete');
+       // Route::get('/view', [App/Http/Controllers\AlumniController::class,'index'])->name('alumni.view');
+       Route::get('/view2', [App\Http\Controllers\AlumniController::class, 'index'])->name('alumni.view');
 });
 
      /// PROFILE \\\

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama_lengkap');
             $table->string('jenis_kelamin');
             $table->date('tgl_lahir');
-            $table->string('tahun_lulus');
+            $table->integer('tahun_lulus');
             $table->string('nis');
             $table->string('alamat');
             $table->string('email');
