@@ -56,6 +56,15 @@ Route::middleware('auth')->group(function () {
         Route::get('/delete/{id}', [App\Http\Controllers\AlumniController::class, 'destroy'])->name('alumni.delete');
     });
 
+    //GALERI
+    Route::prefix('galeris')->group(function () {
+        Route::get('/view', [App\Http\Controllers\GaleriController::class, 'index'])->name('galeri.view');
+        Route::get('/add', [App\Http\Controllers\GaleriController::class, 'create'])->name('galeri.add');
+        Route::post('/store', [App\Http\Controllers\GaleriController::class, 'store'])->name('galeri.store');
+        Route::get('/edit/{id}', [App\Http\Controllers\GaleriController::class, 'edit'])->name('galeri.edit');
+        Route::post('/update/{id}', [App\Http\Controllers\GaleriController::class, 'update'])->name('galeri.update');
+        Route::get('/delete/{id}', [App\Http\Controllers\GaleriController::class, 'destroy'])->name('galeri.delete');
+    });
     // KERJASAMA
     Route::prefix('kerjasama')->group(function () {
         Route::get('/view', [App\Http\Controllers\KerjasamaController::class, 'index'])->name('kerjasama.view');
