@@ -26,6 +26,7 @@
  <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css-rtl/pages/page-blog.css')}}">
  <!-- END: Page CSS-->
 
+
  <!-- BEGIN: Custom CSS-->
  <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/style.css')}}">
  <!-- END: Custom CSS-->

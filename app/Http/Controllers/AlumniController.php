@@ -99,7 +99,7 @@ class AlumniController extends Controller
         $data->email = $request->email;
         $data->telepon = $request->telepon;
         $data->handphone = $request->handphone;
-        $data->foto = $request->file('foto')->store('alumni'); //mengambil file dan menyimpan di direktori 'alumni
+        $data->foto = $request->foto;
         $data->update();
 
         return redirect()->route('alumni.view')->with('message', 'Data Berhasil Diupdate');
