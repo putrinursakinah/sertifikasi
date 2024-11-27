@@ -40,7 +40,6 @@
                             <tr class="text-center">
                                 <td>{{ $galeri->title }}</td>
                                 <td>{{ $galeri->deskripsi }}</td>
-                                <td>{{ $galeri->foto }}</td>
                                 <td><img src="{{asset('uploads/'.$galeri->foto)}}" width="50"></td>
                                 <td>
                                     <a href="{{ route('galeri.edit', $galeri->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"> Edit</i></a>

@@ -29,7 +29,7 @@ class GaleriController extends Controller
      */
     public function create()
     {
-        $alumni = DB::table('users')->get();
+        $galeri = DB::table('users')->get();
         return view('backend.galeri.add_galeri', compact('galeri'));
     }
 
@@ -58,24 +58,39 @@ class GaleriController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Galeri $galeri)
+    public function edit(string $id)
     {
-        //
+        $galeri = Galeri::find($id);
+        if (!$galeri) {
+            return redirect()->back()->with('error', 'Galeri tidak ditemukan.');
+        }
+        return view('backend.galeri.edit_galeri', compact('galeri'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Galeri $galeri)
+    public function update(Request $request, string $id)
     {
-        //
+        $data = Galeri::find($id);
+        if (!$data) {
+            return redirect()->back()->with('error', 'Galeri tidak ditemukan.');
+        }
+        $data->title = $request->title;
+        $data->deskripsi = $request->deskripsi;
+        $data->foto= $request->file('foto')->store('galeri');
+        $data->update();
+
+        return redirect()->route('galeri.view')->with('messege', 'Data Berhasil Diupdate');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Galeri $galeri)
+    public function destroy(string $id)
     {
-        //
+        $deleteData = Galeri::find($id);
+        $deleteData->delete();
+        return redirect()->route('galeri.view')->with('message', 'Data Berhasil Dihapus');
     }
 }
