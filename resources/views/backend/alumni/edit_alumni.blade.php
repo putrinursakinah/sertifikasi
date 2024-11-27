@@ -2,6 +2,7 @@
 @section('title','Edit Data Alumni')
 @section('content')
 <div class="container-fluid">
+    {{-- memanggil message jika nantinya data berhasil di edit --}}
     @if (session('message'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session('message') }}
@@ -35,7 +36,6 @@
                                 <option value="Laki-laki">Laki-laki</option>
                                 <option value="Perempuan">Perempuan</option>
                             </select>
-                            {{-- <input type="text" class="form-control" name="jenis_kelamin" value="{{$alumni->jenis_kelamin}}" required> --}}
                         </div>
                     </div>
                 </div>

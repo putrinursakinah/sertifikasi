@@ -85,6 +85,7 @@ class AlumniController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        //mencari data alumni di database alumni, jika data tidak ada akan ada pesan tidak ditemukan
         $data = Alumni::find($id);
         if (!$data) {
             return redirect()->back()->with('error', 'Data Alumni tidak ditemukan.');
@@ -101,7 +102,7 @@ class AlumniController extends Controller
         $data->foto = $request->file('foto')->store('alumni');
         $data->update();
 
-        return redirect()->route('alumni.view')->with('messege', 'Data Berhasil Diupdate');
+        return redirect()->route('alumni.view')->with('message', 'Data Berhasil Diupdate');
 
     }
 
